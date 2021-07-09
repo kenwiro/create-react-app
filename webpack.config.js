@@ -4,7 +4,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'bundle'),
     filename: 'react.js'
@@ -20,14 +20,14 @@ module.exports = {
     usedExports: true
   },
   stats: 'errors-warnings',
-  resolve: { extensions: [ '*', '.js', '.jsx', '.scss' ] },
+  resolve: { extensions: [ '*', '.js', '.jsx', '.tsx', '.scss' ] },
 
   module: {
     rules: [
       {
-        test: /\.js|\.jsx$/,
+        test: /\.ts|\.jsx$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader'
+        loader: 'ts-loader'
       },
       {
         test: /\.scss$/,
@@ -51,7 +51,7 @@ module.exports = {
       title: 'react app'
     }),
     new ESLintPlugin({
-      extensions: [ 'js', 'jsx' ]
+      extensions: [ 'js', 'jsx', 'tsx' ]
     })
   ]
 };
