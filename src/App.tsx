@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { User } from "./types/types";
-import UserItem from "./User/User";
+import { User } from './types/types';
+import UserItem from './User/User';
 
-const App = () => {
+const App = (): JSX.Element => {
 
   useEffect(() => {
     (async function () {
@@ -27,7 +27,7 @@ const App = () => {
       </header>
       <main className="main">
         <ul>
-         {listOfUsers}
+          {listOfUsers}
         </ul>
       </main>
       <footer className="footer">
@@ -35,6 +35,6 @@ const App = () => {
       </footer>
     </div>
   );
-}
+};
 
 export default App;

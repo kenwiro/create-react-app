@@ -4,30 +4,32 @@ module.exports = {
     'node': true,
     'browser': true,
   },
-  "settings": {
-    "react": {
-      "version": "detect"
+  'settings': {
+    'react': {
+      'version': 'detect'
     }
   },
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended'
   ],
   'globals': {
     'Atomics': 'readonly',
     'SharedArrayBuffer': 'readonly'
   },
   'parserOptions': {
-    'parser':'babel-parser',
+    'parser':'@typescript-eslint/parser',
     'ecmaVersion': 2018,
     'sourceType': 'module',
     'ecmaFeatures': {
-      'jsx': true
+      'jsx': true,
     }
   },
   'plugins': [
-    'react'
+    'react',
+    '@typescript-eslint'
   ],
   'rules': {
     'react/jsx-uses-react': 'error',
