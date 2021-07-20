@@ -1,3 +1,4 @@
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -20,7 +21,7 @@ module.exports = {
     usedExports: true
   },
   stats: 'errors-warnings',
-  resolve: { extensions: [ '*', '.js', '.jsx', '.tsx', '.scss' ] },
+  resolve: { extensions: [ '*', '.js', '.jsx', '.tsx', '.scss', '.svg', '.png' ] },
 
   module: {
     rules: [
@@ -36,11 +37,15 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
+              // modules: true
             }
           },
           { loader: 'sass-loader' }
         ]
+      },
+      {
+        test: /\.svg|.png/,
+        type: 'asset/resource',
       }
     ]
   },
